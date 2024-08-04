@@ -38,19 +38,18 @@ export const POST = async (request: Request): Promise<Response> => {
 
   const memories = (await mem0Response.json()) as { memory: string }[];
 
-  console.log(memories);
-
   const memString = memories.map((memory) => memory.memory).join('\n\n');
-
-  console.log(memString);
+  console.log(body.data)
 
   const messages: CoreMessage[] = [
     {
       role: 'system',
-      content: `You are a search assistant that answers the user query based on search results. We already know this about the user, try to tell the user about this showing up!: ${memString}. Give answers in markdown format. the search results are ${body.data.web.results
+      content: `You are a search assistant that answers the user query based on search results.
+       We already know this about the user, try to tell the user about this showing up!: ${memString}. 
+       Give answers in markdown format. the search results are ${body.data.organic
         .map(
           (result) =>
-            `${result.title}\n\n${result.description}\n\n${result.url}\n\n`
+            `${result.title}\n\n${result.snippet}\n\n${result.link}\n\n`
         )
         .join(' ')}`,
     },

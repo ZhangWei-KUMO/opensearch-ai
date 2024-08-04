@@ -32,20 +32,18 @@ export const getSearchResultsFromMemory = async (
   }
 
   const response = await fetch(
-    "https://api.search.brave.com/res/v1/web/search?q=" +
-      encodeURIComponent(query),
-    {
-      headers: {
-        Accept: "application/json",
-        "X-Subscription-Token": process.env.SEARCH_API_KEY,
+    "https://google.serper.dev/search",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "X-API-KEY":process.env.SEARCH_API_KEY
       },
-      next: {
-        revalidate: 60 * 60,
-      },
+      body:JSON.stringify({
+        "q":query
+      })
     }
   );
   const data = (await response.json()) as BingResults;
-
   return data;
 };
 

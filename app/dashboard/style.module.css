@@ -1,0 +1,57 @@
+
+.markdown h1 {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: -.4px;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+.markdown h2 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: -.4px;
+    line-height: 1.2em;
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+}
+
+.markdown h3 {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: -.4px;
+    line-height: 1.2em;
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+}
+
+.markdown h4 {
+    text-align: center;
+    color: rgb(0, 106, 255);
+    margin-bottom: 50px;
+}
+
+.markdown p {
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+    font-weight: 100;
+    color: #717171;
+    text-align: start;
+    list-style: none;
+}
+.markdown li {
+    text-decoration: none;
+    text-align: start;
+    display: flex; /* 添加这一行 */
+}
+
+.markdown li::before {
+    display: inline-block; /* 修改这一行 */
+    width: 2.25ch;
+    box-sizing: border-box;
+    padding-inline-end: 0.75ch;
+    content: "•";
+}

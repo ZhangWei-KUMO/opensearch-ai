@@ -8,8 +8,8 @@ const milling = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Open Search GPT",
-  description: "Open-source SearchGPT, but better.",
+  title: "TubeX AI",
+  description: "Building Generative AI App for the world",
   icons: {
     icon: "/logo.png",
   },

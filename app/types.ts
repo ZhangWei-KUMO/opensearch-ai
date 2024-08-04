@@ -1,8 +1,5 @@
 export interface BingResults {
-  query: Query;
-  mixed: Mixed;
-  type: string;
-  web: Web;
+  organic:any[]
 }
 
 export interface Query {
